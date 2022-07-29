@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techstore | Dashboard</title>
+    <title>Company | Dashboard</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css">
@@ -11,7 +11,7 @@
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">TechStore</a>
+        <a class="navbar-brand" href="index.php">Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@
                   <a class="nav-link" href="#">Orders</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Admins</a>
+                  <a class="nav-link" href="./admins.php">Admins</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mr-5">

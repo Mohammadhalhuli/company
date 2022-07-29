@@ -1,5 +1,7 @@
 <?php
+
     require('inc/header.php');
+    require('handel/conn.php');
 ?>
 
     <div class="container py-5">
@@ -7,11 +9,16 @@
 
             <div class="col-md-4">
                 <div class="card text-white bg-info mb-3">
-                    <div class="card-header">Products</div>
+                    <div class="card-header">Admin</div>
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between align-items-center">
-                            <h5>233</h5>
-                          <a href="#" class="btn btn-light">Show</a>
+                            <?php
+                                $sql="SELECT count(`id`) as counter_city FROM `city`;";
+                                $rus=mysqli_query($conn,$sql);
+                                $count=mysqli_fetch_assoc($rus);
+                            ?>
+                            <h5><?=$count['counter_city']?></h5>
+                          <a href="admins.php" class="btn btn-light">Show</a>
                         </div>
                     </div>
                 </div>
