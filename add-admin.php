@@ -17,7 +17,7 @@
                             endif;
                             unset($_SESSION['error']);
                         ?>
-                        <form method="post" action="handel/add.php" enctype="multipart/from-data">
+                        <form method="post" action="handel/admin/add.php" enctype="multipart/from-data">
                             <div class="form-group">
                               <label>id</label>
                               <input name ="id" type="number" class="form-control">
@@ -28,7 +28,9 @@
                                 <input name ="name" value="<?php
                                     if(isset($_SESSION['name'])){
                                         echo $_SESSION['name'];
+                                        unset($_SESSION['name']);
                                     }
+                                    
                                 ?> "type="text" class="form-control">
                                 <!--select class="form-control">
                                   <option>one</option>

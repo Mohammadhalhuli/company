@@ -1,11 +1,11 @@
 <?php
     require('inc/header.php');
-    require('handel/admin/conn.php');
+    require('handel/conn.php');
     session_start();
     $query="SELECT * FROM `city`";
     $result= mysqli_query($conn,$query);
     if(mysqli_num_rows($result)>0){
-        $admin=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $services=mysqli_fetch_all($result,MYSQLI_ASSOC);
     }else {
         $msg="no data";
     }
@@ -20,7 +20,7 @@
             <div class="col-md-10 offset-md-1">
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3>All Admins</h3>
+                    <h3>All services</h3>
                     <br>
                     <p><?php
                         if(isset($_SESSION['success'])):
@@ -30,7 +30,7 @@
                         endif;
                         unset($_SESSION['success']);
                     ?></p>
-                    <a href="add-admin.php" class="btn btn-success"> Add admin</a>
+                    <a href="add-services.php" class="btn btn-success"> Add services</a>
                 </div>
 
                 <table class="table table-hover">
@@ -45,17 +45,17 @@
                     <tbody>
 
                         <?php
-                        if(!empty($admin)): 
-                        foreach ($admin as $admin_s):?>
+                        if(!empty($services)): 
+                        foreach ($services as $services_s):?>
                       <tr>
-                        <th scope="row"><?=$admin_s['id']?></th>
-                        <td><?=$admin_s['c_name']?></td>
-                        <td><?=$admin_s['country']?></td>
+                        <th scope="row"><?=$services_s['id']?></th>
+                        <td><?=$services_s['c_name']?></td>
+                        <td><?=$services_s['country']?></td>
                         <td>
                             <a class="btn btn-sm btn-info" href="#">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-sm btn-danger" href="handel/admin/delete.php?id=<?=$admin_s['id']?>">
+                            <a class="btn btn-sm btn-danger" href="handel/delete.php?id=<?=$services_s['id']?>">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>

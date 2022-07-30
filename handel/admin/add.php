@@ -72,10 +72,10 @@
            $rus=mysqli_query($conn,$query);
            if($rus){
             if($_FILES['img']['name']){
-                move_uploaded_file($imgtempname,"../uploads/$NewName");
+                move_uploaded_file($imgtempname,"../../uploads/$NewName");
             }
             $_SESSION['success']="admin added successfully";
-            header('location: ../admins.php');
+            header('location: ../../admins.php');
            }
         }else{
             /*
@@ -84,11 +84,11 @@
             }*/
             $_SESSION['error']=$error;
             $_SESSION['name']=$name;
-            header('location: ../add-admin.php');
+            header('location: ../../add-admins.php');
         }
 
 
     }else{
-        header('location: ../admins.php');
+        header('location: ../../admins.php');
     }
 ?>
