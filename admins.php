@@ -20,7 +20,7 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h3>All Admins</h3>
-                    <a href="" class="btn btn-success"> Add admin</a>
+                    <a href="add-admin.php" class="btn btn-success"> Add admin</a>
                 </div>
 
                 <table class="table table-hover">
@@ -55,6 +55,8 @@
                         else:
                         echo $msg;
                       endif;
+
+                      mysqli_close($conn);
                      
                       ?>
                     </tbody>
