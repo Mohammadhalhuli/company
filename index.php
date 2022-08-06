@@ -1,7 +1,7 @@
 <?php
 
     require('inc/header.php');
-    require('handel/conn.php');
+    require('handel/admin/conn.php');
 ?>
 
     <div class="container py-5">

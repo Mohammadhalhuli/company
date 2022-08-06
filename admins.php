@@ -1,7 +1,8 @@
 <?php
     require('inc/header.php');
     require('handel/admin/conn.php');
-    session_start();
+    
+   
     $query="SELECT * FROM `city`";
     $result= mysqli_query($conn,$query);
     if(mysqli_num_rows($result)>0){
@@ -52,7 +53,7 @@
                         <td><?=$admin_s['c_name']?></td>
                         <td><?=$admin_s['country']?></td>
                         <td>
-                            <a class="btn btn-sm btn-info" href="#">
+                            <a class="btn btn-sm btn-info" href="update-admin .php?id=<?=$admin_s['id']?>">
                                 <i class="fas fa-edit"></i>
                             </a>
                             <a class="btn btn-sm btn-danger" href="handel/admin/delete.php?id=<?=$admin_s['id']?>">

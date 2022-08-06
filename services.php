@@ -1,7 +1,7 @@
 <?php
     require('inc/header.php');
     require('handel/conn.php');
-    session_start();
+    
     $query="SELECT * FROM `city`";
     $result= mysqli_query($conn,$query);
     if(mysqli_num_rows($result)>0){

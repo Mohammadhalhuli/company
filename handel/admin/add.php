@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
     require('conn.php');
     if(isset($_POST['submit'])){
          $id=htmlspecialchars(trim($_POST['id']));
@@ -35,6 +35,7 @@
       }elseif(strlen($password )>50){
           $error="name size more than 50 ";
       }
+      $password=password_hash($password,PASSWORD_DEFAULT);//لتشفير كلمة السر عند الاضافة 
       */
 
 
@@ -46,11 +47,12 @@
         print_r($image);
         echo"</pre>";
         */
-        $imagename=$image['name'];
+        $imagename=$image['name'] ;
         $imgtempname=$image['tmp_name'];
         $size=$image['size'];
         $sizeMB=$size/(1024*1024);
         $ext=pathinfo($imagename,PATHINFO_EXTENSION);
+        echo $ext;
         $NewName=uniqid().".".$ext;
 
         if($sizeMB>1){
@@ -59,19 +61,16 @@
         elseif(!in_array(strtolower($ext),['png','jpg','jpeg','gif'])){
              $error[]="image not correct";
         }
-        else{
-            $NewName="default.png";    
-        }
       }
       else{
-        // no image
-      }
-
+        $NewName="default.png";    
+    }
+   
         if(empty($error)){
-           $query="INSERT INTO `city`(`id`, `c_name`, `country`, `img`) VALUES ('$id','$name','$country','$img')";
+           $query="INSERT INTO `city`(`id`, `c_name`, `country`, `img`) VALUES ('$id','$name','$country','$NewName')";
            $rus=mysqli_query($conn,$query);
            if($rus){
-            if($_FILES['img']['name']){
+            if($_FILES['img']['c_name']){
                 move_uploaded_file($imgtempname,"../../uploads/$NewName");
             }
             $_SESSION['success']="admin added successfully";

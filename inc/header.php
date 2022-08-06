@@ -1,3 +1,14 @@
+<?php session_start();  
+  require('handel/admin/conn.php');
+  if(!isset($_SESSION['adminId'])){
+    header("location: handel/login.php");
+  }
+  
+     $id=$_SESSION['adminId'];
+     $sql="SELECT * FROM city WHERE id=$id";
+     $rus=mysqli_query($conn,$sql);*/
+     $admin=mysqli_fetch_assoc($rus);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +44,11 @@
             <ul class="navbar-nav ml-auto mr-5">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Your name
+                     <?=$admin['name']?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Profile</a>
-                      <a class="dropdown-item" href="#">Logout</a>
+                      <a class="dropdown-item" href="handdel/logout.php">Logout</a>
                     </div>
                 </li>
             </ul>
