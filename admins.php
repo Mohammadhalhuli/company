@@ -48,15 +48,18 @@
                         endif;
                         unset($_SESSION['success']);
                     ?></p>
-                    <a href="add-admin.php" class="btn btn-success"> Add admin</a>
+                    <?php 
+                      //  if($admin['role']==1):?>
+                    <a href="add-admin.php" class="btn btn-success"><?=$message['addadmin']?></a>
+                    <?php //endif:?>
                 </div>
 
                 <table class="table table-hover">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">country</th>
+                        <th scope="col"><?=$message['name']?></th>
+                        <th scope="col"><?=$message['country']?></th>
                         <!--th scope="col">Actions</th-->
                       </tr>
                     </thead>

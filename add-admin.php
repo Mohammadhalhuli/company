@@ -59,7 +59,13 @@
                                 <input type="file"  name="img" class="custom-file-input" id="customFile">
                                 <label class="custom-file-label"  for="customFile">Choose Image</label>
                             </div>
-                              
+                              <div class="from-group">
+                                <label for=""></label>
+                                <select class="form-control" name="role" id="">
+                                    <option value="0">admin</option>
+                                    <option value="1">super admin</option>
+                                </select>
+                              </div>
                             <div class="text-center mt-5">
                                 <button type="submit" name ="submit" class="btn btn-primary">Submit</button>
                                 <a class="btn btn-dark" href="#">Back</a>

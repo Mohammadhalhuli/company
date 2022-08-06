@@ -5,6 +5,7 @@
          $name=htmlspecialchars(trim($_POST['name']));
          $country=htmlspecialchars(trim($_POST['country']));
          $img=htmlspecialchars(trim($_POST['img']));
+         $role=$_POST['role'];
         $error=[];
         if(empty($name)){
             $error="name is required";
@@ -67,7 +68,7 @@
     }
    
         if(empty($error)){
-           $query="INSERT INTO `city`(`id`, `c_name`, `country`, `img`) VALUES ('$id','$name','$country','$NewName')";
+           $query="INSERT INTO `city`(`id`, `c_name`, `country`, `img`,`role`) VALUES ('$id','$name','$country','$NewName','$role')";
            $rus=mysqli_query($conn,$query);
            if($rus){
             if($_FILES['img']['c_name']){
